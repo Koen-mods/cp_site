@@ -1,6 +1,7 @@
 body {
     background-color: #1e1e1e;
     padding-top: 60px;
+    overflow: auto;
 }
 
 .title_wrapper {
