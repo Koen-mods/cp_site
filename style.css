@@ -33,12 +33,15 @@ body {
   border-left: 5px solid goldenrod; /* left-side outline */
   border-radius: 4px;
   box-shadow: -2px 0 6px rgba(212, 175, 55, 0.3); /* subtle gold glow */
+  max-width: 800px;   /* max width on desktop */
+  margin: 0 auto;     /* center horizontally */
 }
 
 @media (max-width: 600px) {
   .main-content {
     padding: 16px;
     font-size: 16px;
+    max-width: 90vw;
   }
 }
 
