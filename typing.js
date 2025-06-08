@@ -1,34 +1,31 @@
-const text = "Create jouw Paradise!";
-const typingElement = document.getElementById("typing");
+const texts = ["Create jouw Paradise!", "Overleef en werk samen!", "Heb plezier met je vrienden!"];
+const typingSpeed = 100;
+const deletingSpeed = 60;
+const pauseTime = 1500;
 
-let i = 0;
+let textIndex = 0;
+let charIndex = 0;
 let isDeleting = false;
 
-function typeEffect() {
-  if (!isDeleting) {
-    typingElement.textContent = text.substring(0, i + 1);
-    i++;
+const typedText = document.getElementById("typing");
 
-    if (i === text.length) {
-      // Pause at full text
-      setTimeout(() => {
-        isDeleting = true;
-        typeEffect();
-      }, 2000); // pause duration
-    } else {
-      setTimeout(typeEffect, 100); // typing speed
-    }
+function type() {
+  const currentText = texts[textIndex];
+
+  if (isDeleting) {
+    typedText.textContent = currentText.substring(0, charIndex--);
   } else {
-    typingElement.textContent = text.substring(0, i - 1);
-    i--;
-
-    if (i === 0) {
-      isDeleting = false;
-      setTimeout(typeEffect, 500); // pause before retyping
-    } else {
-      setTimeout(typeEffect, 50); // deleting speed
-    }
+    typedText.textContent = currentText.substring(0, charIndex++);
   }
+
+  if (!isDeleting && charIndex === currentText.length) {
+    setTimeout(() => isDeleting = true, pauseTime);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length;
+  }
+
+  setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+type();
