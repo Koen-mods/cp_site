@@ -15,7 +15,6 @@ body {
       font-family: monospace;
       border-right: 2px solid black;
       white-space: nowrap;
-      overflow: hidden;
       display: inline-block;
       padding-right: 5px;
       top: 100%;
