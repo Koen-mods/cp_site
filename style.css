@@ -102,6 +102,7 @@ body {
   padding: 10px 0;
   z-index: 1000;
   border-top: 2px solid #333;
+  margin-top: 50px;
 }
 
 .footer-icon {
@@ -117,4 +118,8 @@ body {
 
 #gamemodes {
   list-style-type: none;
+}
+
+summary {
+  cursor: pointer;
 }
