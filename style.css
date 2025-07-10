@@ -123,3 +123,8 @@ body {
 summary {
   cursor: pointer;
 }
+
+#Datum {
+  font-size: smaller;
+  color: #333;
+}
