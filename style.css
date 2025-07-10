@@ -129,3 +129,10 @@ summary {
   font-size: smaller;
   color: #666666;
 }
+
+.404-img {
+    position: absolute;
+    left: 45%;
+    border: black 2px solid;
+    border-radius: 15%;
+}
