@@ -36,7 +36,7 @@ body {
   box-shadow: -2px 0 6px rgba(212, 175, 55, 0.3); /* subtle gold glow */
   max-width: 800px;   /* max width on desktop */
   margin-bottom: 5%;
-  margin: 0 auto;     /* center horizontally */
+  margin: 0px auto 10% auto;     /* center horizontally */
 }
 
 @media (max-width: 600px) {
